@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/home"
+        tools:ignore="HardcodedText" />
+    <item
+        android:title="Speed Test"
+        android:icon="@drawable/ic_speedtest"
+        android:id="@+id/speedtest"
+        tools:ignore="HardcodedText" />
+    <item
+        android:title="Transaction"
+        android:icon="@drawable/ic_payment"
+        android:id="@+id/transaction"
+        tools:ignore="HardcodedText" />
+    <item
+        android:title="Ticket"
+        android:icon="@drawable/ic_ticket"
+        android:id="@+id/tickets"
+        tools:ignore="HardcodedText" />
+
+</menu>

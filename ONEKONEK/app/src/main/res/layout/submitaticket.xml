@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    tools:context=".SubmitTicket">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0FFFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar1"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar1"
+        app:layout_constraintStart_toStartOf="@+id/toolbar1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header_logo"
+        tools:ignore="ContentDescription" />
+
+
+    <ImageButton
+        android:id="@+id/backbttnSubitTicket"
+        android:layout_width="33sp"
+        android:layout_height="33sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_roundback"
+        android:contentDescription="@string/app_name"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck"/>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginStart="30dp"
+        android:text="Send Us A Message"
+        android:textColor="#1975AE"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="30dp"
+        android:text="We’re here to help! If you have questions or feedback, please fill out the form below. Our team will respond promptly. We value your input!"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginStart="30dp"
+        android:text="Category of Problem"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteY="324dp" />
+
+
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/corner_solidgray"
+        tools:ignore="UselessParent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:hintEnabled="true">
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:padding="10dp"
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginStart="30dp"
+        android:text="Description of the Problem"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="430dp" />
+
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidgray"
+        android:gravity="start"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields"
+        tools:layout_editor_absoluteY="450dp" />
+
+
+    <Button
+        android:id="@+id/bttnSubitTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="570dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/corner_solidblue"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck,VisualLintButtonSize" />
+
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    tools:context=".ChangeBillingAddress">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEditAddress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0FFFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+<!-- BACK BUTTON -->
+    <ImageButton
+        android:id="@+id/back1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="13dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbarEditAddress"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="@+id/toolbarEditAddress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_roundback"
+        tools:ignore="ImageContrastCheck" />
+
+
+<!-- ONE KONEK LOGO -->
+    <ImageView
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="15dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginEnd="115dp"
+        app:srcCompat="@drawable/header_logo"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_below="@+id/toolbarEditAddress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/corner_stroke_blue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="20dp"
+            android:text="Edit Billing Address"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:textColor="#1975AE"
+            tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="55dp"
+            android:text="To update your billing address, enter the new address, and save to ensure future invoices reflect the change."
+            tools:ignore="HardcodedText" />
+
+
+
+<!-- NEW ADDRESS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="145dp"
+            android:text="New Address"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/newAddress"
+            android:layout_width="282dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/corner_stroke_black"
+            android:padding="15dp"
+            android:textColor="#000000"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields" />
+
+
+<!-- SAVE BUTTON -->
+        <Button
+            android:id="@+id/saveBttnBillingAddress"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="230dp"
+            android:background="#1975AE"
+            android:text="save"
+            android:textColor="#ffffff"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+    </FrameLayout>
+</RelativeLayout>

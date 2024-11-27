@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    tools:context=".CheckAvailability">
+
+
+    <ImageButton
+        android:id="@+id/backBttn_CheckAvailability"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_roundback"
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck"/>
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:gravity="center"
+        android:text="CHECKAVAILABILITY"
+        android:textColor="#1975AE"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        tools:ignore="HardcodedText,SpUsage,TextContrastCheck,TextSizeCheck"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:text="See your location to check if our services has reached your area!"
+        android:textColor="#1975AE"
+        android:textSize="16dp"
+        tools:ignore="HardcodedText"/>
+
+
+    <!--1STSERVER-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidgray"
+        android:elevation="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/main_server"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/mainserverLocsServer"
+            android:textColor="#000000"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/applynowMainServerBttn"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/corner_solidblue"
+            android:text="Applynow"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="OpenMainServer"
+            tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,TextSizeCheck,TouchTargetSizeCheck">
+
+        </Button>
+    </FrameLayout>
+
+
+    <!--2NDSERVER-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidgray"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/san_sebastian_server"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/sansebastianLocsServer"
+            android:textColor="#000000"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/applynowSanSebServerBttn"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/corner_solidblue"
+            android:text="Applynow"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="OpenSanSebServer"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck,UsingOnClickInXml">
+
+        </Button>
+    </FrameLayout>
+
+
+    <!--3RDSERVER-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidgray"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/san_isidro_server"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/sanisidroLocsServer"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/applynowSanIsidroBttn"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/corner_solidblue"
+            android:text="Applynow"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="OpenSanIsidroServer"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck">
+
+        </Button>
+    </FrameLayout>
+
+
+    <!--4THSERVER-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="602dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidgray"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/palapat_server"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/palapatLocsServer"
+            android:textColor="#000000"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/applynowPalapatServerBttn"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/corner_solidblue"
+            android:text="Applynow"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="OpenPalapatServer"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck">
+
+        </Button>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

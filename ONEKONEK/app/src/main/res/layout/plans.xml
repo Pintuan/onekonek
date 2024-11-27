@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Plans">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+<ImageButton
+        android:id="@+id/backBttn_Plans"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_roundback"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:text="Internet Subscription Plans"
+        android:textColor="#1975AE"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+
+
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp"
+        android:text="ONE-KONEK offers a range of internet plans to meet the varying needs of households and businesses:"
+        android:textColor="#1975AE"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+
+            <!-- SULIT PLAN -->
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="131dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/corner_planbg_gray"
+            android:elevation="5dp">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/plan_sulit"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/okplanInfo"
+                android:textColor="#616161"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck">
+
+            </TextView>
+
+        </FrameLayout>
+
+
+            <!-- OK PLAN -->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_planbg_gray"
+        android:elevation="5dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plan_ok"
+            app:shapeAppearanceOverlay="@style/roundimageview"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/okplanInfo"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+    </FrameLayout>
+
+
+            <!-- WOW PLAN -->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_planbg_gray"
+        android:elevation="5dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plan_wow"
+            app:shapeAppearanceOverlay="@style/roundimageview"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/wowplanInfo"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+    </FrameLayout>
+
+
+
+            <!-- PANALO PLAN -->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_planbg_gray"
+        android:elevation="5dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plan_panalo"
+            app:shapeAppearanceOverlay="@style/roundimageview"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/panaloplanInfo"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+    </FrameLayout>
+</LinearLayout>
+</RelativeLayout>

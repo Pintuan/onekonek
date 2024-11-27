@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".Tickets">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="775dp">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0FFFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="60dp"
+            android:elevation="30dp">
+
+        </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/back4"
+        android:layout_width="33sp"
+        android:layout_height="33sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_roundback"
+        android:contentDescription="@string/app_name"
+        android:onClick="OpenHomeBack2Back"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck"/>
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginEnd="115dp"
+        android:gravity="center"
+        android:text="Tickets"
+        android:textColor="#1975AE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="110dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginEnd="160dp"
+            app:srcCompat="@drawable/ic_ticketlogo"
+            tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="160dp"
+        android:layout_marginStart="105dp"
+        android:text="How can we help you?"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+
+
+<!-- SUBMIT A TICKET BUTTON -->
+    <Button
+        android:id="@+id/submit_ticket"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="220dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/corner_solidgray"
+        android:text="Submit a Ticket"
+        android:textColor="#01579B"
+        android:textSize="17sp"
+        tools:ignore="HardcodedText,ObsoleteLayoutParam,TextSizeCheck"
+        android:elevation="10dp"/>
+
+
+<!-- CONTACT US BUTTON -->
+        <Button
+            android:id="@+id/contactusBttn"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="280dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/corner_solidgray"
+            android:text="Contact Us"
+            android:textColor="#01579B"
+            android:textSize="17sp"
+            android:onClick="Opencontactus"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,OnClick,TextSizeCheck"
+            android:elevation="10dp"/>
+
+
+
+
+
+<!-- Ticket Status-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="395dp"
+            android:layout_marginStart="30dp"
+            android:text="Ticket Status"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+
+    <ScrollView
+        android:layout_marginTop="425dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/corner_solidgray"
+            android:orientation="vertical"
+            android:padding="8dp"
+            tools:ignore="TextSizeCheck">
+
+
+        <!-- Status -->
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:text="Active"
+            android:textColor="#0277BD"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+            <TextView
+
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:textColor="#0277BD"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!-- PROBLEM  -->
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:paddingTop="4dp"
+            android:text="Problem"
+            android:textColor="#455A64"
+            android:textSize="16sp" />
+
+            <TextView
+            android:id="@+id/paymentDueDate"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:ignore="DuplicateIds" />
+
+
+        <!-- DESCRIPTION -->
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:paddingTop="3dp"
+            android:text="Description"
+            android:textColor="#455A64"
+            android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/accountStatus"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="55dp"
+                android:paddingTop="2dp"
+                android:textColor="#AD1457"
+                android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/corner_solidgray"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:ignore="TextSizeCheck">
+
+
+                <!-- Status -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Schedule"
+                    android:textColor="#0277BD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:textColor="#0277BD"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <!-- PROBLEM  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:paddingTop="4dp"
+                    android:text="Problem"
+                    android:textColor="#455A64"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/paymentDueDate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="155dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    tools:ignore="DuplicateIds" />
+
+
+                <!-- DESCRIPTION -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="3dp"
+                    android:text="Description"
+                    android:textColor="#455A64"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="2dp"
+                    android:textColor="#AD1457"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/corner_solidgray"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:ignore="TextSizeCheck">
+
+
+                <!-- Status -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Solved"
+                    android:textColor="#0277BD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:textColor="#0277BD"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <!-- PROBLEM  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:paddingTop="4dp"
+                    android:text="Problem"
+                    android:textColor="#455A64"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/paymentDueDate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="155dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    tools:ignore="DuplicateIds" />
+
+
+                <!-- DESCRIPTION -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="3dp"
+                    android:text="Description"
+                    android:textColor="#455A64"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="2dp"
+                    android:textColor="#AD1457"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/corner_solidgray"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:ignore="TextSizeCheck">
+
+
+                <!-- Status -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Rescheduled"
+                    android:textColor="#0277BD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:textColor="#0277BD"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <!-- PROBLEM  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:paddingTop="4dp"
+                    android:text="Problem"
+                    android:textColor="#455A64"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/paymentDueDate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="155dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    tools:ignore="DuplicateIds" />
+
+
+                <!-- DESCRIPTION -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="3dp"
+                    android:text="Description"
+                    android:textColor="#455A64"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="55dp"
+                    android:paddingTop="2dp"
+                    android:textColor="#AD1457"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/nav_color"
+        app:itemTextColor="@color/nav_color"
+        android:background="#186EA4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>

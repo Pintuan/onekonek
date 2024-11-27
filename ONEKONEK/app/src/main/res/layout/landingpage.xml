@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".landingpage">
+
+    <ImageView
+        android:id="@+id/imageCover"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="TODO"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/coverphoto"
+        tools:ignore="ContentDescription,HardcodedText,VisualLintBounds" />
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginVertical="310dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/corner_stroke_gray"
+        android:backgroundTint="#D3D3D3"
+        tools:ignore="MissingConstraints,TextSizeCheck"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="461dp">
+
+        <ImageButton
+            android:id="@+id/imagebuttonCheckAvailability"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#d3d3d3"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_checkavailability"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="CHECK AVAILABILITY"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayoutapply"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="310dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_stroke_gray"
+        android:backgroundTint="#D3D3D3"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/imagebuttonApplyNow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#d3d3d3"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_applynow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="APPLY NOW"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="450dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_stroke_gray"
+        android:backgroundTint="#D3D3D3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="870dp">
+
+        <ImageButton
+            android:id="@+id/imagebuttonPlans"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#d3d3d3"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_appstatus"
+            tools:ignore="VisualLintBounds" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="PLANS"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText,VisualLintBounds" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginVertical="450dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/corner_stroke_gray"
+        android:backgroundTint="#D3D3D3"
+        tools:ignore="MissingConstraints,TextSizeCheck"
+        tools:layout_editor_absoluteY="321dp">
+
+        <ImageButton
+            android:id="@+id/imagebuttonSpeedTest"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#d3d3d3"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_plans"
+            tools:ignore="VisualLintBounds" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="SPEED TEST"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText,VisualLintBounds" />
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/loginpage"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/corner_5dp_solid_blue"
+        android:onClick="loginPageview"
+        android:text="Login"
+        android:textColor="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.19"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+</RelativeLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    tools:context=".HomePage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="768dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/back4"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/ic_roundback"
+            android:contentDescription="@string/app_name"
+            android:onClick="OpenHomeBack2Back"
+            tools:ignore="ImageContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml"/>
+
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="115dp"
+            android:gravity="center"
+            android:text="Tickets"
+            android:textColor="#1975AE"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="100dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginEnd="160dp"
+            app:srcCompat="@drawable/ic_ticketlogo"
+            app:tint="@color/black"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="150dp"
+            android:layout_marginStart="105dp"
+            android:text="How can we help you?"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/submit_ticket"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="200dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="@color/blue"
+            android:onClick="OpenSubmitaticket"
+            android:text="Submit a Ticket"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:cornerRadius="4dp"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,OnClick,TextContrastCheck,TextSizeCheck,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/contactusBttn"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="250dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="@color/blue"
+            android:onClick="Opencontactus"
+            android:text="Contact Us"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:cornerRadius="4dp"
+            tools:ignore="HardcodedText,ObsoleteLayoutParam,OnClick,TextContrastCheck,TextSizeCheck,UsingOnClickInXml,VisualLintButtonSize" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="360dp"
+            android:text="Ticket Status"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+
+        <ScrollView
+            android:layout_marginTop="390dp"
+            android:layout_width="match_parent"
+            android:layout_height="380dp">
+
+            <LinearLayout
+                android:id="@+id/ticketsContainer"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="#3EBD26"
+        app:itemTextColor="#3EBD26"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_nav" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</RelativeLayout>

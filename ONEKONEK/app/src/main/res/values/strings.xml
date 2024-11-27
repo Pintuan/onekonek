@@ -1,0 +1,129 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">OneKonek</string>
+    <string name="select" />
+    <string name="app_name2">DropdownMenu</string>
+    <string name="item_label">Items</string>
+    <string name="check_availability">CHECK AVAILABILITY</string>
+    <string name="apply_now">APPLY NOW</string>
+    <string name="plans">PLANS</string>
+    <string name="application_status">APPLICATION STATUS</string>
+    <string name="register">register</string>
+    <string name="account_name">Account name:</string>
+    <string name="account_number">Account number:</string>
+    <string name="hello_juan">Hello, Juan!</string>
+    <string name="account_status_overdue">Account Status: OVERDUE</string>
+    <string name="pay_now">PAY NOW</string>
+    <string name="plan">Plan:</string>
+    <string name="hi_juan_plesae_be_reminded" tools:ignore="TypographyEllipsis">Hi, Juan! Plesae be reminded...</string>
+    <string name="hi_juan_please_be_reminded">Hi, Juan! Please be reminded</string>
+    <string name="upcoming_due_dates">Upcoming due dates</string>
+    <string name="messages">Messages</string>
+    <string name="fullname">Fullname:</string>
+    <string name="address_details">Address Details</string>
+    <string name="unit_house_number_street_name" tools:ignore="TypographyEllipsis">Unit/House number, Street name,... *</string>
+    <string name="barangay">Barangay *</string>
+    <string name="city_municipality">City/Municipality *</string>
+    <string name="zip_code">Zip Code *</string>
+    <string name="nearest_landmark">Nearest Landmark *</string>
+    <string name="select_plan">Select Plan</string>
+    <string name="select_plan2">Select Plan</string>
+    <string name="i_agree_in_privacy_policy_which_i_have_read_and_understand">I agree in Privacy Policy, which I have read and understand.</string>
+    <string name="submit_application">SUBMIT APPLICATION</string>
+    <string name="email">Email *</string>
+    <string name="birthday">Birthday *</string>
+    <string name="mobile_number">Mobile Number *</string>
+    <string name="mother_maiden_name">Mother (Maiden Name) *</string>
+    <string name="first_name">First Name *</string>
+    <string name="basic_information">Basic Information</string>
+    <string name="application_form">Application Form</string>
+    <string name="get_started">Get Started</string>
+    <string name="please_provide_your_basic_information_location_and_the_plan_you_wish_to_subscribe_to_if_you_agree_to_our_privacy_policy_please_check_the_box_below">Please provide your basic information, location, and the plan you wish to subscribe to. If you agree to our Privacy Policy, please check the box below.</string>
+    <string name="last_name">Last Name *</string>
+    <string name="new_to_one_konek">New to One Konek?</string>
+    <string name="apply_now2">Apply Now</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password *</string>
+    <string name="welcome_to_one_konek">Welcome to One Konek</string>
+    <string name="please_enter_your_13_digit_account_number_and_password_to_start_managing_your_subscription_or_click_apply_now_if_you_wish_to_subscribe">Please enter your 13 digit account number and password to start managing your subscription. Or click “Apply Now” if you wish to subscribe.</string>
+    <string name="for_back_only">for back only</string>
+    <string name="account_num">Account Number *</string>
+    <string name="remaining_balance">Remaining Balance\n\n₱1,998.00</string>
+    <string name="payment_reminder1" tools:ignore="TypographyEllipsis">Payment reminder...</string>
+    <string name="payment_reminder2" tools:ignore="TypographyEllipsis">Payment reminder...</string>
+    <string name="payment_reminder3" tools:ignore="TypographyEllipsis">Payment reminder...</string>
+    <string name="payment_due_date">Payment Due Date:</string>
+    <string name="hi_juan_please_be_reminded2">Hi, Juan! Please be reminded</string>
+    <string name="_999_00">₱999.00</string>
+    <string name="paymongo">Paymongo</string>
+    <string name="paymongopic">Paymongo</string>
+    <string name="paynow">Pay Now</string>
+    <string name="amount_to_pay">Amount to Pay:</string>
+    <string name="mode_of_payment">Mode of Payment</string>
+    <string name="paymongoo">Paymongo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="getstarted">Get Started</string>
+    <string name="todo">TODO</string>
+    <string name="aboutus">Established on December 12, 2020, ONE-KONEK Network and Data Solutions is a community-based internet service provider serving Bulacan and surrounding areas with high-quality, affordable, and locally managed internet. We enable individuals and businesses to connect reliably and efficiently with advanced technology and a commitment to local service.</string>
+    <string name="contactusInfo">For service inquiries, assistance, or to schedule an appointment, please reach out to us:</string>
+
+    <string name="main_server">MAIN SERVER</string>
+    <string name="mainserverLocsServer">Sta. Elena, Sagrada, San Pablo, San Pedro, San Agustin</string>
+    <string name="san_sebastian_server">SAN SEBASTIAN SERVER</string>
+    <string name="sansebastianLocsServer">San Nicolas, San Sebastian, Mercado, San Jose, Sta Monica, Sto. Nino</string>
+    <string name="san_isidro_server">SAN ISIDRO SERVER</string>
+    <string name="sanisidroLocsServer">Tampok, San Isidro, Panducot</string>
+    <string name="palapat_server">PALAPAT SERVER</string>
+    <string name="palapatLocsServer">Iba, Carillo, Palapat, San Miguel, San Juan, San Isidro, Panducot</string>
+
+
+    <string name="sulitplanInfo">Best for 3-5 devices, ideal for general use like browsing, streaming, and casual gaming.</string>
+    <string name="okplanInfo">Perfect for 5-7 devices, providing stable speeds for browsing, streaming, and light downloading.</string>
+    <string name="wowplanInfo">Suitable for homes or small businesses with 8-12 devices, offering reliable speeds for demanding tasks.</string>
+    <string name="panaloplanInfo">Designed for large households or businesses with 12+ devices, supporting extensive, high-speed connectivity.</string>
+    <string name="palapatofficeAddress">2nd Floor, PetroJam Commercial Building, PetroJam Gas Station, Purok 6, Palapat, Hagonoy, Bulacan</string>
+
+
+    <string name="vision">To be the leading community-based internet service provider in Bulacan, connecting communities through accessible, high-speed internet and supporting them with reliable, locally-managed technology solutions.</string>
+
+    <string name="mission">ONE-KONEK is dedicated to delivering more than just connectivity; we aim to bridge the digital gap in our communities with services that are accessible, reliable, and responsive. Our focus on quality service is summed up by our tagline: "Siguradong OK sa SPEED, OK sa PRESYO, at OK sa SERBISYO. Ito ang TATAK One-Konek – tatak na OK para sa iyo!"</string>
+
+    <string name="additionalservices">In addition to internet connectivity, ONE-KONEK provides a wide range of technology solutions, enhancing convenience, security, and digital access for local businesses, institutions, and individual users.</string>
+
+    <string name="cctvinstallationservices"> CCTV Installation Services - We offer comprehensive CCTV installation for homes, businesses, and community areas, enhancing safety and security with high-quality surveillance solutions. Our technicians ensure proper setup and maintenance, allowing for dependable monitoring and peace of mind.</string>
+
+    <string name="publicaddresssystem">Public Address System Installation Services - Our PA system installation services are designed for a range of clients, including businesses, schools, and Local Government Units (LGUs). By providing reliable and efficient public address systems, we enable clear and effective communication for events, announcements, and other community needs. This service ensures seamless audio solutions that are essential for large gatherings and public spaces.</string>
+
+
+    <string name="computerandprinterrepair">Computer and Printer Repair - ONE-KONEK’s skilled technicians offer fast and effective repair services for computers and printers, ensuring these devices remain operational and efficient. Whether for individual clients or small businesses, our repair services help avoid downtime, keeping essential technology running smoothly.</string>
+
+    <string name="smartprintingsolutions">Smart Printing Solutions (Printer Rental Service) - Our flexible printer rental services offer a convenient option for small businesses and individuals needing printing capabilities without long-term commitment. With a range of printer models available, we provide tailored rental solutions that cater to different usage levels and printing needs.</string>
+
+    <string name="documentprintingservices">Document Printing Services - We provide high-quality document printing services to meet both personal and business needs. From single-page prints to bulk printing jobs, ONE-KONEK ensures professional quality and fast turnaround, supporting our clients’ document and branding requirements.</string>
+
+    <string name="cashincashout">Cash-In and Cash-Out Services for GCash and Maya - For added convenience in the community, ONE-KONEK offers cash-in and cash-out services for GCash and Maya users. This service allows residents to handle digital transactions securely and easily, supporting a digital-friendly local economy and providing accessible e-wallet services in their own neighborhood</string>
+
+    <string name="freeinternetconnection">ONE-KONEK is committed to supporting local institutions by providing FREE INTERNET CONNECTION for schools, Local Government Offices, churches, and events, particularly those organized by LGUs and community groups. This initiative aims to enhance access to information, resources, and connectivity for local residents, contributing to community development and engagement.</string>
+
+    <string name="whychooseonekonek">ONE-KONEK is more than just an internet provider—we are a dedicated partner in bringing accessible digital solutions to Bulacan. Our Business Account setup with major telecom providers and Joint Pole Agreements with local power distributors ensure a reliable, sustainable infrastructure that fully complies with regulatory standards. Subscribers benefit from fast connectivity and the peace of mind that comes with knowing their service provider is committed to legal, long-term operations.</string>
+
+    <string name="costumercenteredtechsupport">Our Technical Team Department is always ready to address technical concerns quickly and efficiently. Following our Report-Now-Repair-Same-Day model, we are committed to resolving connectivity issues within the day they are reported. This rapid response capability sets us apart, ensuring subscribers experience minimal service interruptions and a seamless digital experience.</string>
+
+    <string-array name="plan_options">
+        <item>Sulit Plan</item>
+        <item>OK Plan</item>
+        <item>Sulit Plan</item>
+        <item>Panalo Plan</item>
+    </string-array>
+
+    <string-array name="problem_categories">
+        <item>Change Of Plan</item>
+        <item>Billing Problem</item>
+        <item>Payment Problem</item>
+        <item>Follow-up Ticket</item>
+        <item>Others</item>
+    </string-array>
+</resources>
+
+

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    tools:context=".LoginPage">
+
+    <ImageButton
+        android:id="@+id/backBttn_LoginPage"
+        android:layout_width="33sp"
+        android:layout_height="33sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_roundback"
+        android:contentDescription="@string/for_back_only"
+        android:textColorHint="@color/background_color"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="158dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/onekonek_logo"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="230dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="60dp"
+        android:text="Welcome to One Konek"
+        android:textColor="#1975AE"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="280dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Please enter your email and password to start managing your subscription. Or click “Apply Now” if you wish to subscribe."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintLongText" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="346dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="370dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_stroke_black"
+        android:backgroundTint="#E4E4E4"
+        android:hint="Email *"
+        android:padding="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#455A64"
+        tools:ignore="Autofill,TextFields" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="450dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_stroke_black"
+        android:backgroundTint="#E4E4E4"
+        android:hint="@string/password"
+        android:padding="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#455A64"
+        tools:ignore="Autofill,TextFields"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <TextView
+        android:id="@+id/forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="523dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:minHeight="48dp"
+        android:text="@string/forgot_password"
+        android:textColor="#1975AE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.114"
+        tools:ignore="KeyboardInaccessibleWidget,TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="580dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/corner_solidblue"
+        android:text="@string/login"
+        android:textColor="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.819"
+        tools:ignore="VisualLintButtonSize" />
+
+    <TextView
+        android:id="@+id/new_to_one_konek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="640dp"
+        android:text="@string/new_to_one_konek"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/applynow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="640dp"
+        android:text="@string/apply_now2"
+        android:textColor="#1975AE"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/new_to_one_konek"
+        tools:ignore="TextSizeCheck" />
+
+
+</RelativeLayout>
