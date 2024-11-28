@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +34,7 @@ import okhttp3.Response;
 
 public class RegistrationForm extends AppCompatActivity {
 
-    private TextInputEditText fname, mname, lname, maidenName, birthday, mobileNumber, email, address, billingAddress, landmark;
+    private EditText fname, mname, lname, maidenName, birthday, mobileNumber, email, address, billingAddress, landmark;
     private CheckBox addressCheckBox, privacypolicyCheckBox;
     private Spinner plan;
 
@@ -189,6 +190,12 @@ public class RegistrationForm extends AppCompatActivity {
 
                 @Override
                 public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    if (!response.isSuccessful()) {
+                        Log.e("onekoneks", "Failed response: " + response.message() + " " + response.code());
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed register", Toast.LENGTH_SHORT).show());
+                        return;
+                    }
+
                     runOnUiThread(() -> {
                         Toast.makeText(getApplicationContext(), "Success...", Toast.LENGTH_SHORT).show();
                         // Proceed to LoginPage

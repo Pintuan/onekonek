@@ -244,6 +244,19 @@ public class HomePage extends AppCompatActivity {
 
                         String[] dueDateArray = new String[jsonArray.length()];
 
+                        if (jsonArray.isNull(0)) {
+                            runOnUiThread(() -> {
+                                payNowButton.setEnabled(false);
+                                payNowButton.setAlpha(0.5f);
+                                amountToPay.setText("0");
+                                paymentDueDate.setText("No upcoming due");
+                                dueDate.setText("No upcoming due");
+                                planAmount.setText("0");
+                            });
+
+                            return;
+                        }
+
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             String ammount = jsonObject.optString("ammount", null);

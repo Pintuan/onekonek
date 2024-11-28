@@ -68,7 +68,7 @@ public class BillHistory extends Fragment {
             String jsonBodyString = jsonBody.toString();
 
 
-            NetworkClient.post("/getCustomerBills", jsonBodyString, new Callback() {
+            NetworkClient.post("/getBillHistory", jsonBodyString, new Callback() {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     requireActivity().runOnUiThread(() -> Toast.makeText(requireContext(), "Failed to fetch user bills: " + e.getMessage(), Toast.LENGTH_SHORT).show());
@@ -83,7 +83,8 @@ public class BillHistory extends Fragment {
                         assert response.body() != null;
                         String responseBody = response.body().string();
                         try {
-                            JSONArray jsonArray = new JSONArray(responseBody);
+                            JSONObject responseee = new JSONObject(responseBody);
+                            JSONArray jsonArray = responseee.getJSONArray("data");
 
                             if (jsonArray.isNull(0)) {
                                 requireActivity().runOnUiThread(() -> {
