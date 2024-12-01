@@ -69,7 +69,7 @@ public class BillHistory extends Fragment {
             String jsonBodyString = jsonBody.toString();
 
 
-            NetworkClient.post("/getCustomerBills", jsonBodyString, new Callback() {
+            NetworkClient.post("/getCustomerTransaction", jsonBodyString, new Callback() {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     requireActivity().runOnUiThread(() -> Toast.makeText(requireContext(), "Failed to fetch user bills: " + e.getMessage(), Toast.LENGTH_SHORT).show());
@@ -99,6 +99,7 @@ public class BillHistory extends Fragment {
                                 JSONObject jsonResponse = jsonArray.getJSONObject(i);
                                 String bill_id = jsonResponse.optString("bill_id", null);
                                 String due_date = jsonResponse.optString("due_date", null);
+                                String stat = jsonResponse.optString("stat", null);
                                 ZonedDateTime zonedDateTime = ZonedDateTime.parse(due_date);
                                 double amountPaid = jsonResponse.optDouble("ammount_paid", 0);
                                 double planPrice = jsonResponse.optDouble("plan_price", 0);
@@ -107,7 +108,8 @@ public class BillHistory extends Fragment {
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
                                 String formattedDate = zonedDateTime.format(formatter);
 
-                                boolean isPaid = amountPaid >= planPrice;
+                                boolean isPaid;
+                                isPaid = !stat.equals("76522");
 
                                 requireActivity().runOnUiThread(() -> {
                                     View billingCard = inflater.inflate(R.layout.template_transaction_card, billingContainer, false);
