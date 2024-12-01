@@ -114,6 +114,9 @@
                 android:layout_height="48dp"
                 android:hint="Enter your new address"
                 android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textColorHighlight="@color/black"
                 android:padding="8dp"
                 android:textColorHint="#757575" />
         </com.google.android.material.textfield.TextInputLayout>

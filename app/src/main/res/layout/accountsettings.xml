@@ -283,7 +283,9 @@
             android:enabled="false"
             android:hint=""
             android:maxLength="50"
-            android:textColor="#000000"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:textSize="15dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -296,7 +298,9 @@
             android:enabled="false"
             android:hint=""
             android:maxLength="11"
-            android:textColor="#000000"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:textSize="15dp"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -309,7 +313,9 @@
             android:enabled="false"
             android:hint=""
             android:maxLength="10"
-            android:textColor="#000000"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:textSize="15dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -378,7 +384,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:text=""
-            android:textColor="#000000"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:textSize="16sp"
             tools:ignore="HardcodedText" />
 

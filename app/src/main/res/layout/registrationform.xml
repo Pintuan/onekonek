@@ -112,6 +112,9 @@
                     android:id="@+id/fname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textColorHighlight="@color/black"
                     android:hint="First Name" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,6 +131,9 @@
                     android:id="@+id/mname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textColorHighlight="@color/black"
                     android:hint="Middle Name" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,6 +150,9 @@
                     android:id="@+id/lname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textColorHighlight="@color/black"
                     android:hint="Last Name" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,6 +170,9 @@
                     android:id="@+id/maidenName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textColorHighlight="@color/black"
                     android:hint="Maiden Name" />
             </com.google.android.material.textfield.TextInputLayout>
 
