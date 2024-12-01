@@ -87,6 +87,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,6 +116,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textColorHighlight="@color/black"
             android:inputType="textPassword"
             android:maxLength="16" />
     </com.google.android.material.textfield.TextInputLayout>

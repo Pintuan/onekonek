@@ -110,6 +110,9 @@
                 android:layout_width="350dp"
                 android:layout_height="55dp"
                 android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textColorHighlight="@color/black"
                 tools:ignore="MissingConstraints" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,7 +143,9 @@
         android:background="@drawable/corner_solidwhite"
         android:gravity="start"
         android:padding="12dp"
-        android:textColor="#000000"
+        android:textColor="@color/black"
+        android:textColorLink="@color/black"
+        android:textColorHighlight="@color/black"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="@+id/textView9"
