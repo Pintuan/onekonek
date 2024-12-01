@@ -122,6 +122,8 @@
         <item>Billing Problem</item>
         <item>Payment Problem</item>
         <item>Follow-up Ticket</item>
+        <item>Network Issue</item>
+        <item>Request SOA</item>
         <item>Others</item>
     </string-array>
 

@@ -5,6 +5,7 @@ import static com.example.onekonekmobileapplicationfinal.R.id.imageviewApplyNow;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -44,22 +45,21 @@ public class LandingPage extends AppCompatActivity {
 
         RelativeLayout relativeLayoutApply = findViewById(R.id.relativelayoutapply);
         relativeLayoutApply.setOnClickListener(v -> {
-            Intent intent = new Intent(LandingPage.this, RegistrationForm.class);
-            startActivity(intent);
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            startActivity(browserIntent);
         });
 
 
         ImageView applyView = findViewById(imageviewApplyNow);
         applyView.setOnClickListener(v -> {
-
-            Intent intent = new Intent(LandingPage.this, RegistrationForm.class);
-            startActivity(intent);
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            startActivity(browserIntent);
         });
 
         TextView applyText = findViewById(R.id.textviewApplyNow);
         applyText.setOnClickListener(v -> {
-            Intent intent = new Intent(LandingPage.this, RegistrationForm.class);
-            startActivity(intent);
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            startActivity(browserIntent);
         });
 
         //CheckAvailabilityButton

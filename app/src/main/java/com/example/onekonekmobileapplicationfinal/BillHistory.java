@@ -52,6 +52,7 @@ public class BillHistory extends Fragment {
         return view;
     }
 
+
     private void populateBillingHistory() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
 
@@ -68,7 +69,7 @@ public class BillHistory extends Fragment {
             String jsonBodyString = jsonBody.toString();
 
 
-            NetworkClient.post("/getBillHistory", jsonBodyString, new Callback() {
+            NetworkClient.post("/getCustomerBills", jsonBodyString, new Callback() {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     requireActivity().runOnUiThread(() -> Toast.makeText(requireContext(), "Failed to fetch user bills: " + e.getMessage(), Toast.LENGTH_SHORT).show());
@@ -83,8 +84,7 @@ public class BillHistory extends Fragment {
                         assert response.body() != null;
                         String responseBody = response.body().string();
                         try {
-                            JSONObject responseee = new JSONObject(responseBody);
-                            JSONArray jsonArray = responseee.getJSONArray("data");
+                            JSONArray jsonArray = new JSONArray(responseBody);
 
                             if (jsonArray.isNull(0)) {
                                 requireActivity().runOnUiThread(() -> {
@@ -100,20 +100,34 @@ public class BillHistory extends Fragment {
                                 String bill_id = jsonResponse.optString("bill_id", null);
                                 String due_date = jsonResponse.optString("due_date", null);
                                 ZonedDateTime zonedDateTime = ZonedDateTime.parse(due_date);
+                                double amountPaid = jsonResponse.optDouble("ammount_paid", 0);
+                                double planPrice = jsonResponse.optDouble("plan_price", 0);
 
                                 // Format it into a human-friendly date
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
                                 String formattedDate = zonedDateTime.format(formatter);
 
+                                boolean isPaid = amountPaid >= planPrice;
+
                                 requireActivity().runOnUiThread(() -> {
                                     View billingCard = inflater.inflate(R.layout.template_transaction_card, billingContainer, false);
 
                                     TextView transactionTitle = billingCard.findViewById(R.id.soaTitle);
-                                    TextView transactionDate = billingCard.findViewById(R.id.transactionDate);
+                                    TextView transactionDate = billingCard.findViewById(R.id.dueDate);
+                                    TextView paymentStatusBadge = billingCard.findViewById(R.id.paymentStatusBadge);
 
 
-                                    transactionTitle.setText("Billing Id: " + bill_id);
+                                    transactionTitle.setText("Billing Statement: " + bill_id);
                                     transactionDate.setText(formattedDate);
+
+
+                                    if (isPaid) {
+                                        paymentStatusBadge.setText("Paid");
+                                        paymentStatusBadge.setBackgroundResource(R.drawable.badge_paid); // Green background
+                                    } else {
+                                        paymentStatusBadge.setText("Not Paid");
+                                        paymentStatusBadge.setBackgroundResource(R.drawable.badge_not_paid); // Red background
+                                    }
 
                                     billingContainer.addView(billingCard);
                                 });

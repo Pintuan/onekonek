@@ -2,6 +2,7 @@ package com.example.onekonekmobileapplicationfinal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,22 +28,22 @@ public class CheckAvailability extends Activity {
     }
 
     public void OpenMainServer(View view) {
-        Intent intent = new Intent(this, RegistrationForm.class);
-        startActivity(intent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        startActivity(browserIntent);
     }
 
     public void OpenSanSebServer(View view) {
-        Intent intent = new Intent(this, RegistrationForm.class);
-        startActivity(intent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        startActivity(browserIntent);
     }
 
     public void OpenSanIsidroServer(View view) {
-        Intent intent = new Intent(this, RegistrationForm.class);
-        startActivity(intent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        startActivity(browserIntent);
     }
 
     public void OpenPalapatServer(View view) {
-        Intent intent = new Intent(this, RegistrationForm.class);
-        startActivity(intent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        startActivity(browserIntent);
     }
 }

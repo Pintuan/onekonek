@@ -176,6 +176,8 @@ public class RegistrationForm extends AppCompatActivity {
 
             String jsonBodyString = jsonBody.toString();
 
+            Log.d("onekoneksss", jsonBodyString);
+
 
             NetworkClient.post("/inquire", jsonBodyString, new Callback() {
                 @Override
@@ -195,6 +197,8 @@ public class RegistrationForm extends AppCompatActivity {
                         runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed register", Toast.LENGTH_SHORT).show());
                         return;
                     }
+
+                    Log.e("onekoneks", "Success: " + response.message() + " " + response.code());
 
                     runOnUiThread(() -> {
                         Toast.makeText(getApplicationContext(), "Success...", Toast.LENGTH_SHORT).show();

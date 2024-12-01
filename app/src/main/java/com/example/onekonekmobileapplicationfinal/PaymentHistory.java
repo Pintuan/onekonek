@@ -111,16 +111,12 @@ public class PaymentHistory extends Fragment {
                                         TextView paidAmount = paymentCard.findViewById(R.id.paidAmount);
                                         TextView paymentDate = paymentCard.findViewById(R.id.paymentDate);
                                         TextView transactionNumber = paymentCard.findViewById(R.id.transactionNumber);
-                                        TextView downloadReceipt = paymentCard.findViewById(R.id.downloadOfficialReceipt);
 
                                         // Set dynamic data (replace with actual data)
                                         paidAmount.setText(total_paid); // Example: ₱1500, ₱1600, ...
                                         paymentDate.setText(formattedDate);
                                         transactionNumber.setText(payment_id); // Example: TXN1000, TXN1001, ...
-                                        downloadReceipt.setOnClickListener(v -> {
-                                            // Handle download receipt logic here
-                                            System.out.println("Downloading receipt for TXN" + (1000 + finalI1));
-                                        });
+
 
                                         // Add the card to the container
                                         paymentContainer.addView(paymentCard);

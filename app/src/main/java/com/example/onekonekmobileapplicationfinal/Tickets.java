@@ -134,7 +134,7 @@ public class Tickets extends AppCompatActivity {
                                 if (stat.equals("10")) {
                                     statText = "Pending";
                                 } else if (stat.equals("11")) {
-                                    statText = "Technician";
+                                    statText = "Assigned to Technician";
                                 } else if (stat.equals("12")) {
                                     statText = "Solved";
                                 } else {

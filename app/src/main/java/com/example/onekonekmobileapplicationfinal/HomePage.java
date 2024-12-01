@@ -175,7 +175,7 @@ public class HomePage extends AppCompatActivity {
                         new SharedPrefUtils(getApplicationContext()).setAccountId(account_id);
 
                         runOnUiThread(() -> {
-                            greeting.setText("Hello, " + first_name);
+//                            greeting.setText("Hello, " + first_name);
                             fname.setText(first_name);
                             fullname.setText(first_name + " " + last_name);
                             accountNumber.setText(account_id);
@@ -194,7 +194,7 @@ public class HomePage extends AppCompatActivity {
             Toast.makeText(this, "An unexpected error occurred", Toast.LENGTH_SHORT).show();
         }
     }
-
+    
     private void setValues2() {
         try {
             JSONObject jsonBody = new JSONObject();
