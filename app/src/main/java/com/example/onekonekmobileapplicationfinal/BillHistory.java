@@ -60,8 +60,8 @@ public class BillHistory extends Fragment {
             JSONObject jsonBody = new JSONObject();
             try {
                 String accountId = new SharedPrefUtils(requireActivity().getApplicationContext()).getAccountId();
-                jsonBody.put("authorizationToken", accountId);
-                jsonBody.put("customerId", accountId);
+                jsonBody.put("token", accountId);
+                jsonBody.put("account_id", accountId);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +84,8 @@ public class BillHistory extends Fragment {
                         assert response.body() != null;
                         String responseBody = response.body().string();
                         try {
-                            JSONArray jsonArray = new JSONArray(responseBody);
+                            JSONObject jsonResponsess = new JSONObject(responseBody);
+                            JSONArray jsonArray = jsonResponsess.getJSONArray("results");
 
                             if (jsonArray.isNull(0)) {
                                 requireActivity().runOnUiThread(() -> {
@@ -108,8 +109,7 @@ public class BillHistory extends Fragment {
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
                                 String formattedDate = zonedDateTime.format(formatter);
 
-                                boolean isPaid;
-                                isPaid = !stat.equals("76522");
+                                boolean isPaid = stat.equals("76523");
 
                                 requireActivity().runOnUiThread(() -> {
                                     View billingCard = inflater.inflate(R.layout.template_transaction_card, billingContainer, false);

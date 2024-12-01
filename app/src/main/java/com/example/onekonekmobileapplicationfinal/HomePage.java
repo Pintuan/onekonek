@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -13,9 +14,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,8 +49,10 @@ public class HomePage extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     // UI components
-    private TextView greeting, fname, fullname, accountNumber, amountToPay, plan, dueDate, planAmount, paymentDueDate, accountStatus;
+    private TextView fname, fullname, accountNumber, amountToPay, plan, dueDate, planAmount, paymentDueDate, accountStatus;
     private Button payNowButton;
+    private LinearLayout notifContainer;
+    LayoutInflater inflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,7 @@ public class HomePage extends AppCompatActivity {
 
         if (auth != null && !auth.isEmpty()) {
             setValues2();
+            setNotif();
         }
 
         // Setup Bottom Navigation
@@ -76,11 +82,12 @@ public class HomePage extends AppCompatActivity {
             startActivity(new Intent(this, Transactions.class));
         });
 
+        inflater = LayoutInflater.from(this);
+
     }
 
     private void initializeUIComponents() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        greeting = findViewById(R.id.greeting);
         fname = findViewById(R.id.fname);
         fullname = findViewById(R.id.fullname);
         accountNumber = findViewById(R.id.accountNumber);
@@ -91,6 +98,7 @@ public class HomePage extends AppCompatActivity {
         paymentDueDate = findViewById(R.id.paymentDueDate);
         accountStatus = findViewById(R.id.accountStatus);
         payNowButton = findViewById(R.id.paynow_bttn);
+        notifContainer = findViewById(R.id.notificationContainer);
     }
 
     private void setupBottomNavigation() {
@@ -297,6 +305,93 @@ public class HomePage extends AppCompatActivity {
                             dueDate.setText(finalFormattedDate);
                             planAmount.setText(String.valueOf(fremainingBalance));
                         });
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error parsing response: " + e.getMessage());
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to parse response", Toast.LENGTH_SHORT).show());
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+            Log.e(TAG, "Error in setValues2(): ", e);
+        }
+    }
+
+    private void setNotif() {
+        try {
+            JSONObject jsonBody = new JSONObject();
+            String auth = new SharedPrefUtils(getApplicationContext()).getAccountId();
+
+            if (auth == null || auth.isEmpty()) {
+                Log.e(TAG, "Authorization token is missing");
+                Toast.makeText(this, "Authorization token missing", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            jsonBody.put("token", auth);
+
+            String jsonBodyString = jsonBody.toString();
+
+            NetworkClient.post("/getNotifications", jsonBodyString, new Callback() {
+                @Override
+                public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                    Log.e(TAG, "API call failed: " + e.getMessage());
+                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to fetch user details", Toast.LENGTH_SHORT).show());
+                }
+
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                    if (response.body() == null) {
+                        Log.e(TAG, "Response body is null");
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "No data received", Toast.LENGTH_SHORT).show());
+                        return;
+                    }
+
+                    if (!response.isSuccessful()) {
+                        Log.e(TAG, "Failed response: " + response.code());
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to load data", Toast.LENGTH_SHORT).show());
+                        return;
+                    }
+
+                    String responseBody = response.body().string();
+                    try {
+                        JSONObject jsonResponsess = new JSONObject(responseBody);
+                        JSONArray jsonArray = jsonResponsess.getJSONArray("results");
+
+                        if (jsonArray.isNull(0)) {
+                            runOnUiThread(() -> {
+                                // Inflate No Notif Template
+                            });
+
+                            return;
+                        }
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String notif_title = jsonObject.optString("notif_title", null);
+                            String notif_body = jsonObject.optString("notif_body", null);
+                            String notif_creation_date = jsonObject.optString("notif_creation_date", null);
+                            ZonedDateTime zonedDateTime = ZonedDateTime.parse(notif_creation_date);
+                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+                            String formattedDate = zonedDateTime.format(formatter);
+
+                            runOnUiThread(() -> {
+                                View notifCard = getLayoutInflater().inflate(R.layout.template_notification_card, notifContainer, false);
+
+                                TextView notificationTitle = notifCard.findViewById(R.id.notificationTitle);
+                                TextView notificationDescription = notifCard.findViewById(R.id.notificationDescription);
+                                TextView notificationDate = notifCard.findViewById(R.id.notificationDate);
+
+                                notificationTitle.setText(notif_title);
+                                notificationDescription.setText(notif_body);
+                                notificationDate.setText(formattedDate);
+
+                                notifContainer.addView(notifCard);
+                            });
+                        }
+
                     } catch (Exception e) {
                         Log.e(TAG, "Error parsing response: " + e.getMessage());
                         runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to parse response", Toast.LENGTH_SHORT).show());
