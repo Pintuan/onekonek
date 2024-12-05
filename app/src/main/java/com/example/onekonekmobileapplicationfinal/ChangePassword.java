@@ -26,7 +26,7 @@ import okhttp3.Response;
 
 public class ChangePassword extends AppCompatActivity {
 
-    private EditText currentPassword, newPasword, confirmPasword, username;
+    private EditText newPasword, confirmPasword, username;
 
 
     @Override
@@ -37,7 +37,6 @@ public class ChangePassword extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.backbttnChangePassword);
         backButton.setOnClickListener(v -> finish());
 
-        currentPassword = findViewById(R.id.currentPassword);
         newPasword = findViewById(R.id.newPasword);
         confirmPasword = findViewById(R.id.confirmPasword);
         username = findViewById(R.id.username);
@@ -48,12 +47,11 @@ public class ChangePassword extends AppCompatActivity {
     }
 
     private void save() {
-        String cpass = currentPassword.getText().toString();
         String npass = newPasword.getText().toString();
         String conpass = confirmPasword.getText().toString();
         String user = username.getText().toString();
 
-        if (!TextUtils.isEmpty(cpass) && !TextUtils.isEmpty(npass) && !TextUtils.isEmpty(conpass) && !TextUtils.isEmpty(user)) {
+        if (!TextUtils.isEmpty(npass) && !TextUtils.isEmpty(conpass) && !TextUtils.isEmpty(user)) {
             try {
                 JSONObject jsonBody = new JSONObject();
                 try {
@@ -62,7 +60,6 @@ public class ChangePassword extends AppCompatActivity {
                     jsonBody.put("username", user);
                     jsonBody.put("confPass", conpass);
                     jsonBody.put("password", npass);
-                    jsonBody.put("passConfirm", cpass);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

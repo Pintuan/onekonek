@@ -60,7 +60,7 @@ public class Paynow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Redirect to the specified URL
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dev.xen.to/llxNQu9t"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dev.xen.to/jY_LymVZ"));
                 startActivity(browserIntent);
             }
         });

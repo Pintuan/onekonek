@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 import okhttp3.Call;
@@ -37,16 +38,15 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class AccountSettings extends AppCompatActivity {
-
-    private TextInputEditText inputEmail, inputMobileNum, inputBday;
-    private TextView address, name, accountNumber;
+    private TextView address, name, accountNumber, inputBday;
+    private TextInputEditText inputEmail, inputMobileNum;
     private boolean isEditable = false;
     private ShapeableImageView imageView6;
 
     private String first_name, last_name, email, birthdate, contactNum, middle_name;
     JSONObject profile;
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "CutPasteId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,15 +69,11 @@ public class AccountSettings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isEditable) {
-
                     inputEmail.setEnabled(false);
                     inputMobileNum.setEnabled(false);
-                    inputBday.setEnabled(false);
                 } else {
-
                     inputEmail.setEnabled(true);
                     inputMobileNum.setEnabled(true);
-                    inputBday.setEnabled(true);
                 }
 
                 isEditable = !isEditable;
@@ -106,7 +102,65 @@ public class AccountSettings extends AppCompatActivity {
 
         Button saveChangesButton = findViewById(R.id.savechangesBttn);
         saveChangesButton.setOnClickListener(v -> {
-            showDialog();
+            TextInputEditText inputEmail1 = findViewById(R.id.inputemail);
+            TextInputEditText inputMobileNum1 = findViewById(R.id.inputmobilenum);
+            String inputEmailS = Objects.requireNonNull(inputEmail1.getText()).toString();
+            String inputMobileNumS = Objects.requireNonNull(inputMobileNum1.getText()).toString();
+            try {
+                JSONObject jsonBody = new JSONObject();
+                try {
+                    String auth = new SharedPrefUtils(getApplicationContext()).getAuth();
+                    jsonBody.put("hsdn2owet", auth);
+                    jsonBody.put("contactNum", inputMobileNumS);
+                    jsonBody.put("email", inputEmailS);
+
+                    Log.d("onekoneks", email);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                String jsonBodyString = jsonBody.toString();
+
+                NetworkClient.post("/updateUserInfo", jsonBodyString, new Callback() {
+                    @Override
+                    public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Update Profile failed: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                    }
+
+                    @Override
+                    public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                        if (response.isSuccessful()) {
+                            runOnUiThread(() -> {
+                                // Always show a toast message when the save button is clicked
+                                Toast.makeText(AccountSettings.this, "Changes saved successfully!", Toast.LENGTH_SHORT).show();
+
+                                // Optional: Lock fields after saving, if required
+                                inputEmail.setEnabled(false);
+                                inputMobileNum.setEnabled(false);
+                                inputBday.setEnabled(false);
+
+                                // Update the editable state
+                                isEditable = false;
+                            });
+                        } else {
+                            try {
+                                assert response.body() != null;
+                                JSONObject jsonResponse = new JSONObject(response.body().string());
+                                String error = jsonResponse.getString("error");
+                                runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Update profile failed: " + error, Toast.LENGTH_SHORT).show());
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to parse response", Toast.LENGTH_SHORT).show());
+                            }
+                        }
+                    }
+                });
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
@@ -144,7 +198,7 @@ public class AccountSettings extends AppCompatActivity {
                             String account_id = jsonResponse.optString("account_id", null);
                             email = jsonResponse.optString("email", null);
                             birthdate = jsonResponse.optString("birthdate", null);
-                            String addressText = jsonResponse.optString("address", null);
+                            String addressText = jsonResponse.optString("billing_address", null);
                             contactNum = jsonResponse.optString("contact_num", null);
                             profile = jsonResponse.getJSONObject("profilepic");
                             JSONArray data = profile.getJSONArray("data");
@@ -208,73 +262,7 @@ public class AccountSettings extends AppCompatActivity {
                 .setMessage("Please enter your password to proceed.")
                 .setView(passwordInput) // Set the EditText in the dialog
                 .setPositiveButton("Submit", (dialog, which) -> {
-                    String password = passwordInput.getText().toString();
-                    if (!password.isEmpty()) {
-                        try {
-//                            const { hsdn2owet, fName, mName, lName, contactNum, email, profilePic, passConfirm } = req.body;
-                            JSONObject jsonBody = new JSONObject();
-                            try {
-                                String auth = new SharedPrefUtils(getApplicationContext()).getAuth();
-                                jsonBody.put("hsdn2owet", auth);
-                                jsonBody.put("fName", first_name);
-                                jsonBody.put("mName", middle_name);
-                                jsonBody.put("lName", last_name);
-                                jsonBody.put("contactNum", contactNum);
-                                jsonBody.put("email", email);
-                                jsonBody.put("profilePic", profile);
-                                jsonBody.put("passConfirm", password);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
 
-                            String jsonBodyString = jsonBody.toString();
-
-                            NetworkClient.post("/updateUserInfo", jsonBodyString, new Callback() {
-                                @Override
-                                public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                                    runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Update Profile failed: " + e.getMessage(), Toast.LENGTH_SHORT).show());
-                                }
-
-                                @Override
-                                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                                    if (response.isSuccessful()) {
-                                        runOnUiThread(() -> {
-                                            // Always show a toast message when the save button is clicked
-                                            Toast.makeText(AccountSettings.this, "Changes saved successfully!", Toast.LENGTH_SHORT).show();
-
-                                            // Optional: Lock fields after saving, if required
-                                            inputEmail.setEnabled(false);
-                                            inputMobileNum.setEnabled(false);
-                                            inputBday.setEnabled(false);
-
-                                            // Update the editable state
-                                            isEditable = false;
-                                        });
-                                    } else {
-                                        try {
-                                            assert response.body() != null;
-                                            JSONObject jsonResponse = new JSONObject(response.body().string());
-                                            String error = jsonResponse.getString("error");
-                                            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Update profile failed: " + error, Toast.LENGTH_SHORT).show());
-
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                            runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Failed to parse response", Toast.LENGTH_SHORT).show());
-                                        }
-                                    }
-                                }
-                            });
-
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-
-
-
-                    } else {
-                        Toast.makeText(this, "Password cannot be empty!", Toast.LENGTH_SHORT).show();
-                    }
                     dialog.dismiss();
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());

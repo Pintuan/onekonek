@@ -304,12 +304,12 @@
             android:textSize="15dp"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:id="@+id/inputbday"
             android:layout_width="255dp"
             android:layout_height="45dp"
             android:layout_marginLeft="75dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="115dp"
             android:enabled="false"
             android:hint=""
             android:maxLength="10"
