@@ -109,8 +109,6 @@ public class BillHistory extends Fragment {
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
                                 String formattedDate = zonedDateTime.format(formatter);
 
-                                boolean isPaid = stat.equals("76523");
-
                                 requireActivity().runOnUiThread(() -> {
                                     View billingCard = inflater.inflate(R.layout.template_transaction_card, billingContainer, false);
 
@@ -122,15 +120,21 @@ public class BillHistory extends Fragment {
                                     transactionTitle.setText("Billing Statement: " + bill_id);
                                     transactionDate.setText(formattedDate);
 
-
-                                    if (isPaid) {
-                                        paymentStatusBadge.setText("Paid");
-                                        paymentStatusBadge.setBackgroundResource(R.drawable.badge_paid); // Green background
-                                    } else {
-                                        paymentStatusBadge.setText("Not Paid");
-                                        paymentStatusBadge.setBackgroundResource(R.drawable.badge_not_paid); // Red background
+                                    switch(stat)
+                                    {
+                                        case "76523":
+                                            paymentStatusBadge.setText("Paid");
+                                            paymentStatusBadge.setBackgroundResource(R.drawable.badge_paid);
+                                            break;
+                                        case "76522":
+                                            paymentStatusBadge.setText("Not Paid");
+                                            paymentStatusBadge.setBackgroundResource(R.drawable.badge_not_paid);
+                                            break;
+                                        case "76524":
+                                            paymentStatusBadge.setText("For Verification");
+                                            paymentStatusBadge.setBackgroundResource(R.drawable.badge_paid);
+                                            break;
                                     }
-
                                     billingContainer.addView(billingCard);
                                 });
 

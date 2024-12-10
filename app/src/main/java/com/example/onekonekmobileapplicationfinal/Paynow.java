@@ -187,7 +187,8 @@ public class Paynow extends AppCompatActivity {
                     jsonBody.put("reciever", "16458364951");
                     jsonBody.put("amount", finalAmount);
                     jsonBody.put("bill_id", bill_id);
-                    jsonBody.put("stat", "76523");
+                    jsonBody.put("stat", "76524");
+                    jsonBody.put("payment_type","100000003");
                     jsonBody.put("prorated", 0);
                 } catch (Exception e) {
                     e.printStackTrace();
