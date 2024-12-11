@@ -52,9 +52,9 @@ public class Paynow extends AppCompatActivity {
         planPrice = findViewById(R.id.planPrice);
         billId = findViewById(R.id.billId);
 
-        setValues2();
-
         ImageButton xenditButton = findViewById(R.id.xendit);
+
+        ImageButton button3 = findViewById(R.id.backbttnSubitTicket);
 
         xenditButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +64,6 @@ public class Paynow extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
-
-        ImageButton button3 = findViewById(R.id.backbttnSubitTicket);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +71,7 @@ public class Paynow extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        setValues2();
     }
 
 
@@ -149,13 +148,13 @@ public class Paynow extends AppCompatActivity {
                         String finalFormattedDate = formattedDate;
 
                         runOnUiThread(() -> {
-                            amountToPay.setText(String.valueOf(remainingBalance));
-                            amount.setText(String.valueOf(remainingBalance));
+                            amountToPay.setText(String.valueOf(remainingBalance)+".00");
+                            amount.setText("₱"+String.valueOf(remainingBalance)+".00");
                             accountNumber.setText(account_id);
                             planName.setText(plan_name);
                             planSpeed.setText(plan_speed + " mbps");
                             billDueDate.setText(finalFormattedDate);
-                            planPrice.setText(plan_price);
+                            planPrice.setText("₱"+plan_price+".00");
                             billId.setText(bill_id);
                         });
                     } catch (Exception e) {

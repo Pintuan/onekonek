@@ -264,12 +264,14 @@ public class HomePage extends AppCompatActivity {
 
                             return;
                         }
-
+                        String stat = "";
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            stat = jsonObject.optString("stat", null);
                             String ammount = jsonObject.optString("ammount", null);
                             String ammount_paid = jsonObject.optString("ammount_paid", null);
                             String due_date = jsonObject.optString("due_date", null);
+
                             ZonedDateTime zonedDateTime = ZonedDateTime.parse(due_date);
                             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
 
@@ -291,6 +293,7 @@ public class HomePage extends AppCompatActivity {
 
                         String finalFormattedDate = formattedDate;
                         String finalFformattedDate = fformattedDate;
+                        String finalStat = stat;
                         runOnUiThread(() -> {
                             if (remainingBalance == 0) {
                                 payNowButton.setEnabled(false);
@@ -300,10 +303,35 @@ public class HomePage extends AppCompatActivity {
                                 payNowButton.setAlpha(1.0f); // Reset to fully visible
                             }
 
-                            amountToPay.setText(String.valueOf(remainingBalance));
-                            paymentDueDate.setText(finalFformattedDate);
-                            dueDate.setText(finalFormattedDate);
-                            planAmount.setText(String.valueOf(fremainingBalance));
+
+                            switch (finalStat)
+                            {
+                                case "76522":
+                                {
+                                    amountToPay.setText(String.valueOf(remainingBalance)+".00");
+                                    paymentDueDate.setText(finalFformattedDate);
+                                    dueDate.setText(finalFormattedDate);
+                                    planAmount.setText(String.valueOf(fremainingBalance)+ ".00");
+                                }
+                                break;
+                                case "76523":
+                                {
+                                    amountToPay.setText(remainingBalance+ ".00");
+                                    paymentDueDate.setText(finalFformattedDate);
+                                    dueDate.setText(finalFormattedDate);
+                                    planAmount.setText(String.valueOf(fremainingBalance)+ ".00");
+                                }
+                                break;
+                                case "76524":
+                                {
+                                    amountToPay.setText(fammount_paid+ ".00");
+                                    paymentDueDate.setText(finalFformattedDate);
+                                    dueDate.setText(finalFormattedDate);
+                                    planAmount.setText(fammount_paid + ".00");
+                                    accountStatus.setText("For Verification");
+                                }
+                                break;
+                            }
                         });
                     } catch (Exception e) {
                         Log.e(TAG, "Error parsing response: " + e.getMessage());
