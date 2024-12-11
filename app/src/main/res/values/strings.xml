@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">OneKonekMobileApplicationFinal</string>
+    <string name="app_name">One Konek</string>
     <string name="select" />
     <string name="app_name2">DropdownMenu</string>
     <string name="item_label">Items</string>

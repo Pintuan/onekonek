@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -78,6 +79,7 @@ public class Paynow extends AppCompatActivity {
 
     private void setValues2() {
         try {
+
             JSONObject jsonBody = new JSONObject();
             String auth = new SharedPrefUtils(getApplicationContext()).getAccountId();
 
@@ -148,13 +150,15 @@ public class Paynow extends AppCompatActivity {
                         String finalFormattedDate = formattedDate;
 
                         runOnUiThread(() -> {
-                            amountToPay.setText(String.valueOf(remainingBalance)+".00");
-                            amount.setText("₱"+String.valueOf(remainingBalance)+".00");
+
+                            DecimalFormat df = new DecimalFormat("###,###.00");
+                            amountToPay.setText(df.format(remainingBalance));
+                            amount.setText("₱"+df.format(remainingBalance));
                             accountNumber.setText(account_id);
                             planName.setText(plan_name);
                             planSpeed.setText(plan_speed + " mbps");
                             billDueDate.setText(finalFormattedDate);
-                            planPrice.setText("₱"+plan_price+".00");
+                            planPrice.setText("₱"+df.format(Integer.parseInt(plan_price)));
                             billId.setText(bill_id);
                         });
                     } catch (Exception e) {

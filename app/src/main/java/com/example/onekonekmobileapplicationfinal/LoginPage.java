@@ -84,7 +84,7 @@ public class LoginPage extends AppCompatActivity {
 
         TextView applyNow = findViewById(R.id.applynow);
         applyNow.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
             startActivity(browserIntent);
         });
 

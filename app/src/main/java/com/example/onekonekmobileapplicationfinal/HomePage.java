@@ -31,6 +31,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -244,6 +245,7 @@ public class HomePage extends AppCompatActivity {
 
                     String responseBody = response.body().string();
                     try {
+                        DecimalFormat df = new DecimalFormat("###,##0.00");
                         JSONArray jsonArray = new JSONArray(responseBody);
                         int amountToPayy = 0, alreadyPaid = 0;
 
@@ -256,10 +258,10 @@ public class HomePage extends AppCompatActivity {
                             runOnUiThread(() -> {
                                 payNowButton.setEnabled(false);
                                 payNowButton.setAlpha(0.5f);
-                                amountToPay.setText("0");
+                                amountToPay.setText(df.format(0));
                                 paymentDueDate.setText("No upcoming due");
                                 dueDate.setText("No upcoming due");
-                                planAmount.setText("0");
+                                planAmount.setText(df.format(0));
                             });
 
                             return;
@@ -308,26 +310,26 @@ public class HomePage extends AppCompatActivity {
                             {
                                 case "76522":
                                 {
-                                    amountToPay.setText(String.valueOf(remainingBalance)+".00");
+                                        amountToPay.setText(df.format(remainingBalance));
                                     paymentDueDate.setText(finalFformattedDate);
                                     dueDate.setText(finalFormattedDate);
-                                    planAmount.setText(String.valueOf(fremainingBalance)+ ".00");
+                                    planAmount.setText(df.format(fremainingBalance));
                                 }
                                 break;
                                 case "76523":
                                 {
-                                    amountToPay.setText(remainingBalance+ ".00");
+                                    amountToPay.setText(df.format(remainingBalance));
                                     paymentDueDate.setText(finalFformattedDate);
                                     dueDate.setText(finalFormattedDate);
-                                    planAmount.setText(String.valueOf(fremainingBalance)+ ".00");
+                                    planAmount.setText(df.format(fremainingBalance));
                                 }
                                 break;
                                 case "76524":
                                 {
-                                    amountToPay.setText(fammount_paid+ ".00");
+                                    amountToPay.setText(df.format(Integer.parseInt(fammount_paid)));
                                     paymentDueDate.setText(finalFformattedDate);
                                     dueDate.setText(finalFormattedDate);
-                                    planAmount.setText(fammount_paid + ".00");
+                                    planAmount.setText(df.format(Integer.parseInt(fammount_paid)));
                                     accountStatus.setText("For Verification");
                                 }
                                 break;

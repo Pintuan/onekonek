@@ -22,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -97,6 +98,7 @@ public class PaymentHistory extends Fragment {
                                 String payment_date = jsonObject.optString("payment_date", null);
                                 String account_id = jsonObject.optString("account_id", null);
                                 String accountId = new SharedPrefUtils(requireActivity().getApplicationContext()).getAccountId();
+                                System.out.println(account_id);
                                 if (accountId.equals(account_id)) {
                                     ZonedDateTime zonedDateTime = ZonedDateTime.parse(payment_date);
 
@@ -113,7 +115,8 @@ public class PaymentHistory extends Fragment {
                                         TextView transactionNumber = paymentCard.findViewById(R.id.transactionNumber);
 
                                         // Set dynamic data (replace with actual data)
-                                        paidAmount.setText(total_paid); // Example: ₱1500, ₱1600, ...
+                                        DecimalFormat df = new DecimalFormat("###,###.00");
+                                        paidAmount.setText(df.format(Integer.parseInt(total_paid))); // Example: ₱1500, ₱1600, ...
                                         paymentDate.setText(formattedDate);
                                         transactionNumber.setText(payment_id); // Example: TXN1000, TXN1001, ...
 

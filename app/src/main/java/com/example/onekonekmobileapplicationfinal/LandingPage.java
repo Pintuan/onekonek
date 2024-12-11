@@ -45,20 +45,20 @@ public class LandingPage extends AppCompatActivity {
 
         RelativeLayout relativeLayoutApply = findViewById(R.id.relativelayoutapply);
         relativeLayoutApply.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
             startActivity(browserIntent);
         });
 
 
         ImageView applyView = findViewById(imageviewApplyNow);
         applyView.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
             startActivity(browserIntent);
         });
 
         TextView applyText = findViewById(R.id.textviewApplyNow);
         applyText.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
             startActivity(browserIntent);
         });
 

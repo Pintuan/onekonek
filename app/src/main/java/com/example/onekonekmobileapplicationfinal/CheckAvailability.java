@@ -28,22 +28,22 @@ public class CheckAvailability extends Activity {
     }
 
     public void OpenMainServer(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
         startActivity(browserIntent);
     }
 
     public void OpenSanSebServer(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
         startActivity(browserIntent);
     }
 
     public void OpenSanIsidroServer(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
         startActivity(browserIntent);
     }
 
     public void OpenPalapatServer(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://onekonek.com/ContactUs"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://13.211.183.92/ContactUs"));
         startActivity(browserIntent);
     }
 }
