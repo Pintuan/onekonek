@@ -398,7 +398,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="230dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/grey"
             android:onClick="OpenPayment"
             android:text="PAY NOW"
             android:textColor="@color/white"

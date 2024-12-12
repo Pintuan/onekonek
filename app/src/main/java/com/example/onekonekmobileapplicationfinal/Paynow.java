@@ -2,11 +2,13 @@ package com.example.onekonekmobileapplicationfinal;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,7 @@ import okhttp3.Response;
 public class Paynow extends AppCompatActivity {
 
     private TextView amount, accountNumber, planName, planSpeed, billDueDate, amountToPay, planPrice, billId;
+    Button payNowButton;
 
     private static final String TAG = "onekonek";
     private  JSONArray billsArray;
@@ -43,7 +46,7 @@ public class Paynow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.paynow);
-
+        payNowButton = findViewById(R.id.payNowButton);
         amount = findViewById(R.id.amount);
         accountNumber = findViewById(R.id.accountNumber);
         planName = findViewById(R.id.planName);
@@ -54,15 +57,18 @@ public class Paynow extends AppCompatActivity {
         billId = findViewById(R.id.billId);
 
         ImageButton xenditButton = findViewById(R.id.xendit);
-
+        payNowButton.setClickable(false);
         ImageButton button3 = findViewById(R.id.backbttnSubitTicket);
 
         xenditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Redirect to the specified URL
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dev.xen.to/jY_LymVZ"));
-                startActivity(browserIntent);
+                //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dev.xen.to/jY_LymVZ"));
+                //startActivity(browserIntent);
+                xenditButton.setBackgroundColor(Color.BLUE);
+                payNowButton.setBackgroundColor(Color.BLUE);
+                payNowButton.setClickable(true);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +181,8 @@ public class Paynow extends AppCompatActivity {
 
     public void OpenPayment(View view) {
         try {
+            payNowButton.setBackgroundColor(Color.GRAY);
+            payNowButton.setClickable(false);
             for (int i = 0; i < billsArray.length(); i++) {
                 JSONObject jsonObject = billsArray.getJSONObject(i);
                 String bill_id = jsonObject.optString("bill_id", null);
